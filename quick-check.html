@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Chinese Quick Check · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html" class="active"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:28px;">
+
+  <h2 class="sec-title"><span class="en-only">Job Chinese quick check</span><span class="zh-only">岗位中文小测</span></h2>
+  <p class="sec-sub">
+    <span class="en-only">Try it first — about 2 minutes. No registration, no payment.</span>
+    <span class="zh-only">先体验，约 2 分钟。不要求注册、不设付费门槛。</span>
+  </p>
+
+  <div id="progLine" class="en" style="margin:16px 0 8px; color:var(--ink-3); font-size:13px;">1 / 3</div>
+  <div class="bar" style="margin-bottom:20px; height:6px; background:var(--line);"><i id="progBar" style="display:block;height:100%;background:var(--red);border-radius:999px;width:33%"></i></div>
+
+  <!-- 题 1 -->
+  <div class="card block" data-q="1">
+    <div class="q-num" style="font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;">Question 1</div>
+    <div class="task-box" style="background:var(--bg); border-color:var(--line);">
+      <div class="zh" style="font-size:19px; font-weight:700;">请先检查设备，再开机。</div>
+      <div class="py" style="color:var(--red); font-size:13px; font-weight:600; margin-top:3px;">Qǐng xiān jiǎnchá shèbèi, zài kāijī.</div>
+      <button class="play-btn" style="margin-top:10px;" onclick="speakOne('请先检查设备，再开机。')">🔊 <span class="en-only">Listen again</span><span class="zh-only">再听一遍</span></button>
+    </div>
+    <div style="font-size:14px; color:var(--ink-2); margin:10px 0 4px;"><span class="en-only">What does this mean?</span><span class="zh-only">这句话是什么意思？</span></div>
+    <div data-shuffle>
+      <button class="opt" data-q="1"><span class="key">A</span>First check the equipment, then start it.</button>
+      <button class="opt" data-q="1" data-correct="1"><span class="key">B</span>Start the equipment, then check it.</button>
+      <button class="opt" data-q="1"><span class="key">C</span>Turn off the equipment.</button>
+    </div>
+  </div>
+
+  <!-- 题 2 -->
+  <div class="card block" data-q="2" style="display:none;">
+    <div class="q-num" style="font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;">Question 2</div>
+    <div class="task-box" style="background:var(--bg); border-color:var(--line);">
+      <div class="zh" style="font-size:19px; font-weight:700;">今天三十二人来上班了。</div>
+      <div class="py" style="color:var(--red); font-size:13px; font-weight:600; margin-top:3px;">Jīntiān sānshí'èr rén lái shàngbān le.</div>
+      <button class="play-btn" style="margin-top:10px;" onclick="speakOne('今天三十二人来上班了。')">🔊 <span class="en-only">Listen again</span><span class="zh-only">再听一遍</span></button>
+    </div>
+    <div style="font-size:14px; color:var(--ink-2); margin:10px 0 4px;"><span class="en-only">What does this mean?</span><span class="zh-only">这句话是什么意思？</span></div>
+    <div data-shuffle>
+      <button class="opt" data-q="2" data-correct="1"><span class="key">A</span>32 people came to work today.</button>
+      <button class="opt" data-q="2"><span class="key">B</span>23 people came to work today.</button>
+      <button class="opt" data-q="2"><span class="key">C</span>30 people came to work today.</button>
+    </div>
+  </div>
+
+  <!-- 题 3 -->
+  <div class="card block" data-q="3" style="display:none;">
+    <div class="q-num" style="font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;">Question 3</div>
+    <div class="task-box" style="background:var(--bg); border-color:var(--line);">
+      <div class="zh" style="font-size:19px; font-weight:700;">进车间要戴安全帽。</div>
+      <div class="py" style="color:var(--red); font-size:13px; font-weight:600; margin-top:3px;">Jìn chējiān yào dài ānquánmào.</div>
+      <button class="play-btn" style="margin-top:10px;" onclick="speakOne('进车间要戴安全帽。')">🔊 <span class="en-only">Listen again</span><span class="zh-only">再听一遍</span></button>
+    </div>
+    <div style="font-size:14px; color:var(--ink-2); margin:10px 0 4px;"><span class="en-only">What does this mean?</span><span class="zh-only">这句话是什么意思？</span></div>
+    <div data-shuffle>
+      <button class="opt" data-q="3"><span class="key">A</span>Wear a mask to enter the workshop.</button>
+      <button class="opt" data-q="3" data-correct="1"><span class="key">B</span>Wear a safety helmet to enter the workshop.</button>
+      <button class="opt" data-q="3"><span class="key">C</span>Wear work clothes to enter the workshop.</button>
+    </div>
+  </div>
+
+  <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:14px;">
+    <span class="en-only">Listen to the sentence, then choose its meaning. Audio is machine-read (TTS); real recordings to be added.</span>
+    <span class="zh-only">听句子，选出正确意思。音频为机器朗读（TTS），真人录音待接入。</span>
+  </p>
+
+  <div id="saveRetry" class="card" style="padding:16px 20px; margin-top:16px; display:none; align-items:center; gap:12px; justify-content:space-between; flex-wrap:wrap;">
+    <span style="font-size:14px; color:var(--ink-2);"><span class="en-only">Save failed — your answers are kept. Please retry.</span><span class="zh-only">保存失败，答案已保留——请重试保存。</span></span>
+    <button id="retryBtn" class="btn btn-primary btn-sm"><span class="en-only">Retry save</span><span class="zh-only">重试保存</span></button>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  shuffleOptions('[data-shuffle]');
+  const user = {}, locked = {};
+  const TOTAL = 3;
+  document.querySelectorAll('.opt[data-q]').forEach(o => {
+    o.addEventListener('click', () => {
+      const q = o.dataset.q;
+      if (locked[q]) return;
+      locked[q] = true;
+      user[q] = isCorrectOpt(o);
+      document.querySelectorAll(`.opt[data-q="${q}"]`).forEach(x => { x.classList.remove('sel'); x.style.pointerEvents = 'none'; });
+      o.classList.add('sel');
+      setTimeout(() => {
+        const n = +q;
+        if (n < TOTAL) {
+          const nxt = n + 1;
+          document.querySelector(`.card[data-q="${q}"]`).style.display = 'none';
+          document.querySelector(`.card[data-q="${nxt}"]`).style.display = 'block';
+          document.getElementById('progLine').textContent = `${nxt} / ${TOTAL}`;
+          document.getElementById('progBar').style.width = (nxt/TOTAL*100) + '%';
+        } else {
+          track('quick_check_done', { score: Object.values(user).filter(Boolean).length });
+          finishAndGo({ quizAnswers: user }, 'quick-check-result.html');
+        }
+      }, 240);
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Report · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html" class="active"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:28px;">
+
+  <h2 class="sec-title"><span class="en-only">Learning report</span><span class="zh-only">学习报告</span></h2>
+  <p class="sec-sub"><span class="en-only">What you've mastered, and what to practice next.</span><span class="zh-only">会了什么，还需练什么。</span></p>
+
+  <!-- 空状态：尚无测评 -->
+  <div id="emptyState" class="card" style="padding:28px; margin-top:16px; text-align:center; display:none;">
+    <div style="font-size:36px;">📋</div>
+    <p style="font-size:15px; color:var(--ink-2); margin:10px 0 16px;">
+      <span class="en-only">No assessment yet. Complete the assessment after learning to generate your report.</span>
+      <span class="zh-only">还没有测评记录。学完课程后完成测评，即可生成报告。</span>
+    </p>
+    <a href="lesson.html" class="btn btn-primary"><span class="en-only">Go to lesson</span><span class="zh-only">去学习</span></a>
+  </div>
+
+  <!-- 报告内容 -->
+  <div id="reportView">
+
+    <div class="card" style="padding:24px; margin-top:16px;">
+      <div style="display:flex; align-items:baseline; gap:10px;">
+        <span style="font-size:32px; font-weight:800; color:var(--red);" id="scoreNum">2/3</span>
+        <span style="font-size:13px; color:var(--ink-3);"><span class="en-only">assessment score</span><span class="zh-only">测评得分</span></span>
+      </div>
+      <div class="bar" style="margin-top:12px;"><i id="scoreBar" style="width:66%"></i></div>
+    </div>
+
+    <div class="card" style="padding:14px 20px; margin-top:16px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+      <span class="pill pill-red">🏅 <span class="en-only">Growth +120</span><span class="zh-only">成长值 +120</span></span>
+      <span class="pill pill-red">🔥 <span class="en-only">3-day streak</span><span class="zh-only">连续打卡 3 天</span></span>
+      <span class="en" style="font-size:12px; color:var(--ink-3);"><span class="en-only">Points system to be added</span><span class="zh-only">积分体系待接入</span></span>
+    </div>
+
+    <div class="card" style="padding:24px; margin-top:16px;">
+      <h3 style="font-size:16px; margin-bottom:10px;">✅ <span class="en-only">Mastered</span><span class="zh-only">已掌握任务</span></h3>
+      <div id="okList"></div>
+    </div>
+
+    <div class="card" style="padding:24px; margin-top:16px;">
+      <h3 style="font-size:16px; margin-bottom:10px;">⚠️ <span class="en-only">Weak spots</span><span class="zh-only">薄弱项</span></h3>
+      <div id="weakList"></div>
+    </div>
+
+    <div class="card" style="padding:24px; margin-top:16px;">
+      <h3 style="font-size:16px; margin-bottom:8px;"><span class="en-only">Job threshold</span><span class="zh-only">岗位门槛</span></h3>
+      <div id="passLine"></div>
+      <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:8px;">
+        <span class="en-only">Demo rule: total ≥ 4/6 AND each ability ≥ 1 correct — not a formal certification.</span>
+        <span class="zh-only">演示判定规则：总分 ≥ 4 且三项能力各至少对 1 题，不作为正式认证。</span>
+      </p>
+    </div>
+
+    <!-- 下一步 -->
+    <div class="card" style="padding:24px; margin-top:16px; background:var(--red-50);" id="nextStep">
+      <h3 style="font-size:16px; margin-bottom:12px;">🎯 <span class="en-only">Next step</span><span class="zh-only">下一步</span></h3>
+      <div id="nextBody"></div>
+    </div>
+
+  </div>
+
+  <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:14px; text-align:center;">
+    <span class="en-only">Report data is generated from your answers. This is a demo — no real learning record is claimed.</span>
+    <span class="zh-only">报告根据你的答题生成，为演示数据，不冒充真实学习记录。</span>
+  </p>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  const ABILITY_LABELS = [
+    { key: 'listen', en: 'Understand', zh: '听得懂' },
+    { key: 'express', en: 'Express', zh: '说得清' },
+    { key: 'collab', en: 'Collaborate', zh: '能协作' }
+  ];
+
+  function render() {
+    const zh = isZh();
+    const r = getAssessmentResult();
+    const empty = document.getElementById('emptyState');
+    const view = document.getElementById('reportView');
+
+    if (!r.complete) {
+      empty.style.display = 'block';
+      view.style.display = 'none';
+      return;
+    }
+    empty.style.display = 'none';
+    view.style.display = 'block';
+
+    const answers = r.answers;
+    const score = r.score;
+    const total = r.total;
+    track('report_view', { score, level: r.level });
+    document.getElementById('scoreNum').textContent = `${score}/${total}`;
+    document.getElementById('scoreBar').style.width = (score/total*100) + '%';
+
+    const ok = [], weak = [];
+    for (const lab of ABILITY_LABELS) {
+      const qs = r.ABILITIES[lab.key];
+      const cnt = qs.filter(q => answers[q] === true).length;
+      const name = lab[zh ? 'zh' : 'en'];
+      const ap = cnt >= 1;
+      const item = `<div style="padding:6px 0; font-size:14.5px;">${ap ? '✅' : '⚠️'} ${name} <span style="color:var(--ink-3);">${cnt}/${qs.length}</span></div>`;
+      (ap ? ok : weak).push(item);
+    }
+    document.getElementById('okList').innerHTML = ok.length
+      ? ok.join('')
+      : `<div style="color:var(--ink-3); font-size:14px;">${zh ? '暂无' : 'None'}</div>`;
+    document.getElementById('weakList').innerHTML = weak.length
+      ? weak.join('')
+      : `<div style="color:var(--ink-3); font-size:14px;">${zh ? '暂无' : 'None'}</div>`;
+
+    const passed = r.passed;
+    const levelText = r.level === 'A' ? 'A' : (r.level === 'B' ? 'B' : '');
+    document.getElementById('passLine').innerHTML = passed
+      ? `<span style="color:var(--red); font-weight:700;">✅ ${zh ? '阶段测评达标（' : 'Stage check passed ('}${levelText}${zh ? ' 等）' : ')'}</span>`
+      : `<span style="color:var(--ink-2); font-weight:700;">${zh ? '阶段测评未达标' : 'Stage check not passed'}</span>`;
+
+    const nb = document.getElementById('nextBody');
+    if (!passed) {
+      let focus = 'listen';
+      for (const lab of ABILITY_LABELS) {
+        if (!r.abilityPassed[lab.key]) { focus = lab.key; break; }
+      }
+      nb.innerHTML = `<p style="font-size:14.5px; color:var(--ink-2); margin-bottom:14px;">${zh ? '先补练薄弱项，再重新测评。' : 'Practice the weak spots first, then retake the assessment.'}</p>
+        <a href="lesson.html?focus=${focus}" class="btn btn-primary">${zh ? '补练薄弱项 →' : 'Practice weak spots →'}</a>`;
+    } else {
+      const auth = getState().authorized ? 'checked' : '';
+      nb.innerHTML = `
+        <p style="font-size:14.5px; color:var(--ink-2); margin-bottom:14px;">${zh ? '阶段测评已达标。要获得企业认可的语言认证，请报名认证大考。' : 'Stage check passed. To earn the enterprise-recognized certification, register for the exam.'}</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+          <a href="exam-register.html" class="btn btn-primary">${zh ? '报名认证大考 →' : 'Register for the exam →'}</a>
+          <a href="jobs.html" class="btn btn-ghost">${zh ? '查看推荐岗位 →' : 'See recommended jobs →'}</a>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:14px;">
+          <div><b>${zh ? '授权用于求职人才推荐' : 'Authorize for job recommendation'}</b>
+            <div style="font-size:12.5px; color:var(--ink-2);">${zh ? '授权后企业可查看你的能力档案，用于求职推荐' : 'Enterprises can see your profile for job recommendation after you authorize'}</div>
+          </div>
+          <label class="switch"><input type="checkbox" ${auth} onchange="authToggle(this)"><span class="slider"></span></label>
+        </div>
+        <p style="font-size:13px; color:var(--ink-2); margin-top:14px;">${zh ? '在职员工：应用于工作，经授权向企业提供报告，不必进入求职流程。' : 'Employees: apply it at work and share the report with your employer — no need to enter the job-seeking flow.'}</p>
+        <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line-2);">
+          <a href="lesson.html" class="btn btn-ghost">${zh ? '继续学习 / 补练薄弱项 →' : 'Keep learning / practice weak spots →'}</a>
+        </div>`;
+    }
+  }
+  render();
+  window.onLangChange = render;
+</script>
+</body>
+</html>

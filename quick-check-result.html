@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Check Result · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html" class="active"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:28px;">
+
+  <h2 class="sec-title"><span class="en-only">Where should you start?</span><span class="zh-only">从哪里开始学？</span></h2>
+  <p class="sec-sub">
+    <span class="en-only">Based on your quick-check result.</span>
+    <span class="zh-only">根据你的小测结果。</span>
+  </p>
+
+  <!-- 空状态：未完成小测 -->
+  <div id="emptyState" class="card" style="padding:28px; margin-top:16px; text-align:center; display:none;">
+    <div style="font-size:36px;">📋</div>
+    <p style="font-size:15px; color:var(--ink-2); margin:10px 0 16px;">
+      <span class="en-only">You haven't finished the quick check yet. Complete it first to see your result.</span>
+      <span class="zh-only">你还没有完成小测。请先完成小测再查看结果。</span>
+    </p>
+    <a href="quick-check.html" class="btn btn-primary"><span class="en-only">Take the quick check</span><span class="zh-only">去完成小测</span></a>
+  </div>
+
+  <!-- 结果 -->
+  <div id="resultView">
+    <div class="card" style="padding:24px; margin-top:16px; text-align:center;">
+      <div style="font-size:40px;">🎯</div>
+      <div style="font-size:30px; font-weight:800; color:var(--red);" id="scoreLine">2/3</div>
+      <div class="en" style="color:var(--ink-3); font-size:13px;"><span class="en-only">correct</span><span class="zh-only">答对</span></div>
+    </div>
+
+    <div class="card" style="padding:24px; margin-top:16px;">
+      <h3 style="font-size:16px; margin-bottom:12px;"><span class="en-only">Preliminary indication</span><span class="zh-only">初步判断</span></h3>
+      <div id="okList"></div>
+    </div>
+
+    <div class="card" style="padding:24px; margin-top:16px;">
+      <h3 style="font-size:16px; margin-bottom:12px;"><span class="en-only">May need improvement</span><span class="zh-only">可能需要加强</span></h3>
+      <div id="weakList"></div>
+    </div>
+
+    <div class="card" style="padding:24px; margin-top:16px; background:var(--red-50);">
+      <h3 style="font-size:16px; margin-bottom:6px;">🎯 <span class="en-only">Your one-week goal</span><span class="zh-only">建议的一周目标</span></h3>
+      <p style="font-size:14.5px; color:var(--ink-2);" id="goalLine"></p>
+      <div style="margin-top:16px;">
+        <a href="learning-path.html" class="btn btn-primary"><span class="en-only">Choose your target job →</span><span class="zh-only">选择目标岗位 →</span></a>
+      </div>
+    </div>
+
+    <div class="card" style="padding:16px 20px; margin-top:16px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div style="font-size:13.5px; color:var(--ink-2);"><span class="en-only">Save your result and keep learning.</span><span class="zh-only">保存成绩，继续学习。</span></div>
+      <a href="signup.html" class="btn btn-ghost btn-sm"><span class="en-only">Sign in to save</span><span class="zh-only">登录保存</span></a>
+    </div>
+
+    <div style="margin-top:16px; text-align:center;">
+      <button class="btn btn-ghost" onclick="shareResult()"><span class="en-only">📤 Share my result</span><span class="zh-only">📤 分享我的成绩</span></button>
+    </div>
+
+    <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:14px; text-align:center;">
+      <span class="en-only">The goal adapts to your level — it does not promise reaching employment requirements within one week.</span>
+      <span class="zh-only">目标按基础调整，不承诺一周达到就业要求。</span>
+    </p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  const TASKS = {
+    1: { en: 'Understanding instructions', zh: '理解工作指令' },
+    2: { en: 'Numbers & quantities', zh: '数字与数量' },
+    3: { en: 'Safety requirements', zh: '安全要求' }
+  };
+
+  function render() {
+    const s = getState();
+    const answers = (s.quizAnswers && typeof s.quizAnswers === 'object') ? s.quizAnswers : {};
+    const complete = ['1','2','3'].every(q => typeof answers[q] === 'boolean');
+    const empty = document.getElementById('emptyState');
+    const view = document.getElementById('resultView');
+
+    if (!complete) {
+      empty.style.display = 'block';
+      view.style.display = 'none';
+      return;
+    }
+    empty.style.display = 'none';
+    view.style.display = 'block';
+
+    const zh = isZh();
+    const score = ['1','2','3'].filter(q => answers[q] === true).length;
+    track('result_view', { score });
+    document.getElementById('scoreLine').textContent = `${score}/3`;
+
+    const ok = [], weak = [];
+    for (const q in TASKS) {
+      const name = TASKS[q][zh ? 'zh' : 'en'];
+      (answers[q] === true ? ok : weak).push(name);
+    }
+    document.getElementById('okList').innerHTML = ok.length
+      ? ok.map(n => `<div style="padding:6px 0; font-size:14.5px;">✅ ${n}</div>`).join('')
+      : `<div style="color:var(--ink-3); font-size:14px;">${zh ? '暂无' : 'None yet'}</div>`;
+    document.getElementById('weakList').innerHTML = weak.length
+      ? weak.map(n => `<div style="padding:6px 0; font-size:14.5px;">⚠️ ${n}</div>`).join('')
+      : `<div style="color:var(--ink-3); font-size:14px;">${zh ? '暂无' : 'None'}</div>`;
+    document.getElementById('goalLine').textContent = score >= 3
+      ? (zh ? '开始学习岗位专项任务。' : 'Start learning job-specific tasks.')
+      : (zh ? '先补基础，再进入岗位任务学习。' : 'Strengthen the basics first, then move to job tasks.');
+  }
+  function shareResult() {
+    const s = getState();
+    const answers = (s.quizAnswers && typeof s.quizAnswers === 'object') ? s.quizAnswers : {};
+    const score = ['1','2','3'].filter(q => answers[q] === true).length;
+    const zh = isZh();
+    const canvas = document.createElement('canvas');
+    canvas.width = 640; canvas.height = 800;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, 640, 800);
+    ctx.fillStyle = '#C93632'; ctx.fillRect(0, 0, 640, 8);
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#20252B'; ctx.font = 'bold 30px sans-serif';
+    ctx.fillText('津企通 JinQiTong', 320, 76);
+    ctx.fillStyle = '#C93632'; ctx.font = 'bold 80px sans-serif';
+    ctx.fillText(score + '/3', 320, 190);
+    ctx.fillStyle = '#606975'; ctx.font = '20px sans-serif';
+    ctx.fillText(zh ? '岗位中文小测' : 'Job Chinese quick check', 320, 236);
+    const tasks = {
+      1: { en: 'Understanding instructions', zh: '理解工作指令' },
+      2: { en: 'Numbers & quantities', zh: '数字与数量' },
+      3: { en: 'Safety requirements', zh: '安全要求' }
+    };
+    ctx.font = '24px sans-serif';
+    let y = 300;
+    for (const q in tasks) {
+      const ok = answers[q] === true;
+      ctx.fillStyle = '#20252B';
+      ctx.fillText((ok ? '✅ ' : '⚠️ ') + tasks[q][zh ? 'zh' : 'en'], 320, y);
+      y += 48;
+    }
+    ctx.fillStyle = '#C93632'; ctx.font = 'bold 26px sans-serif';
+    ctx.fillText('学工作中真正用得到的中文', 320, 700);
+    ctx.font = '16px sans-serif'; ctx.fillStyle = '#8A919B';
+    ctx.fillText('Chinese for the work you do', 320, 736);
+    canvas.toBlob(function(blob) {
+      const url = URL.createObjectURL(blob);
+      const file = new File([blob], 'jin-qitong-result.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], title: '津企通', text: '学工作中真正用得到的中文' }).catch(download);
+      } else { download(); }
+      function download() {
+        const a = document.createElement('a');
+        a.href = url; a.download = 'jin-qitong-result.png'; a.click();
+      }
+    });
+  }
+  render();
+  window.onLangChange = render;
+</script>
+</body>
+</html>

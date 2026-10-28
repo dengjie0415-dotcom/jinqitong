@@ -1,0 +1,11 @@
+{
+  "name": "津企通 JinQiTong · Job Chinese for Zimbabwe",
+  "short_name": "津企通",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F6F7F9",
+  "theme_color": "#C93632",
+  "description": "面向津巴布韦的岗位中文学习与企业服务（演示原型）",
+  "icons": []
+}

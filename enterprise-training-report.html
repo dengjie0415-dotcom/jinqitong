@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>培训报告 · 津企通</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .matrix { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .matrix th, .matrix td { padding: 12px 10px; border-bottom: 1px solid var(--line-2); text-align: center; }
+  .matrix th { color: var(--ink-3); font-weight: 600; font-size: 12.5px; letter-spacing: .02em; }
+  .matrix td:first-child { text-align: left; font-weight: 600; }
+  @media print { .topbar, .side-nav, .footer, .no-print { display: none !important; } }
+</style>
+</head>
+<body data-lang="zh">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html" class="active"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" class="active" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" style="padding-top:20px;">
+
+  <div class="learn-layout">
+
+    <aside class="side-nav">
+      <div class="side-title"><span class="en-only">Enterprise</span><span class="zh-only">企业服务导航</span></div>
+      <a href="enterprise.html"><span class="en-only">Workspace</span><span class="zh-only">工作台</span></a>
+      <a href="enterprise-training.html"><span class="en-only">Staff training</span><span class="zh-only">员工培训</span></a>
+      <a href="enterprise-training-report.html" class="active"><span class="en-only">Training report</span><span class="zh-only">培训报告</span></a>
+      <a href="enterprise-recruitment.html"><span class="en-only">Recruitment</span><span class="zh-only">招聘与候选人</span></a>
+    </aside>
+
+    <main>
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div>
+          <h2 class="sec-title"><span class="en-only">Team ability matrix</span><span class="zh-only">班组能力矩阵</span></h2>
+          <p class="sec-sub"><span class="en-only">Training deliverable — demo data.</span><span class="zh-only">培训交付物——演示数据。</span></p>
+        </div>
+        <button class="btn btn-ghost no-print" onclick="window.print()"><span class="en-only">🖨 Print / Export</span><span class="zh-only">🖨 打印 / 导出</span></button>
+      </div>
+
+      <!-- 汇总条 -->
+      <div class="stat-row" style="margin-top:16px;">
+        <div class="stat"><div class="num">3</div><div class="lbl"><span class="en-only">Trainees</span><span class="zh-only">本期参训</span></div></div>
+        <div class="stat"><div class="num">3</div><div class="lbl"><span class="en-only">Certified</span><span class="zh-only">通过认证</span></div></div>
+        <div class="stat"><div class="num">B</div><div class="lbl"><span class="en-only">Average level</span><span class="zh-only">平均等级</span></div></div>
+      </div>
+
+      <!-- 矩阵 -->
+      <div class="card" style="margin-top:16px; overflow-x:auto;">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th><span class="en-only">Employee</span><span class="zh-only">员工</span></th>
+              <th><span class="en-only">听得懂 · Understand</span><span class="zh-only">听得懂</span></th>
+              <th><span class="en-only">说得清 · Express</span><span class="zh-only">说得清</span></th>
+              <th><span class="en-only">能协作 · Collaborate</span><span class="zh-only">能协作</span></th>
+              <th><span class="en-only">Level</span><span class="zh-only">等级</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>塔万达 · Tawanda</td>
+              <td>✅</td>
+              <td>⚠️</td>
+              <td>✅</td>
+              <td><span class="pill pill-red">B</span></td>
+            </tr>
+            <tr>
+              <td>琪波 · Chipo</td>
+              <td>✅</td>
+              <td>✅</td>
+              <td>⚠️</td>
+              <td><span class="pill pill-red">B</span></td>
+            </tr>
+            <tr>
+              <td>穆萨 · Musa</td>
+              <td>✅</td>
+              <td>✅</td>
+              <td>✅</td>
+              <td><span class="pill pill-red">A</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:14px;">
+        <span class="en-only">✅ = passed · ⚠️ = weak · — = not tested. Demo data — not real learning records.</span>
+        <span class="zh-only">✅ 达标 · ⚠️ 薄弱 · — 未测。演示数据，非真实学习记录。</span>
+      </p>
+
+      <div style="margin-top:18px;">
+        <a href="enterprise-training.html" class="btn btn-ghost"><span class="en-only">← Back to staff training</span><span class="zh-only">← 返回员工培训</span></a>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommended Jobs · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html" class="active"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:28px;">
+
+  <h2 class="sec-title"><span class="en-only">Recommended jobs</span><span class="zh-only">查看适合申请的岗位</span></h2>
+  <p class="sec-sub"><span class="en-only">Jobs matched to your profile — for demonstration only.</span><span class="zh-only">基于你的档案匹配的岗位——仅供演示。</span></p>
+
+  <!-- 未达标 -->
+  <div id="notPassed" class="card" style="padding:28px; margin-top:16px; text-align:center; display:none;">
+    <div style="font-size:36px;">📚</div>
+    <p style="font-size:15px; color:var(--ink-2); margin:10px 0 16px;">
+      <span class="en-only">You haven't completed the assessment or reached the demo threshold yet. Complete the assessment first.</span>
+      <span class="zh-only">你还没完成测评或未达到演示阈值，请先完成测评。</span>
+    </p>
+    <a href="assessment.html" class="btn btn-primary"><span class="en-only">Complete assessment →</span><span class="zh-only">去完成测评 →</span></a>
+  </div>
+
+  <!-- 未授权 -->
+  <div id="notAuthorized" class="card" style="padding:28px; margin-top:16px; text-align:center; display:none;">
+    <div style="font-size:36px;">🔒</div>
+    <p style="font-size:15px; color:var(--ink-2); margin:10px 0 16px;">
+      <span class="en-only">You haven't authorized sharing your profile yet. Please authorize it in your learning report.</span>
+      <span class="zh-only">你还没有授权共享档案，请在学习报告页完成授权。</span>
+    </p>
+    <a href="report.html" class="btn btn-primary"><span class="en-only">Go to report →</span><span class="zh-only">去报告页授权 →</span></a>
+  </div>
+
+  <!-- 岗位列表 -->
+  <div id="jobList">
+    <div class="card" style="padding:18px 20px; margin-top:16px; display:flex; align-items:flex-start; gap:10px;">
+      <span style="color:var(--red); font-size:15px;">ℹ️</span>
+      <p style="font-size:13px; color:var(--ink-2);">
+        <span class="en-only">Demo job data. Recommendations consider field and experience, not just the Chinese score.</span>
+        <span class="zh-only">演示岗位数据。推荐兼顾专业和经验，不单靠中文分数。</span>
+      </p>
+    </div>
+
+    <a href="job-detail.html?id=crusher" class="card roster-row" style="margin-top:14px; text-decoration:none;">
+      <div class="avatar">⛏️</div>
+      <div style="flex:1;">
+        <b><span class="en-only">Mining · Crusher operator</span><span class="zh-only">矿业 · 破碎机操作岗</span></b>
+        <div style="font-size:13px; color:var(--ink-2); margin-top:4px;">
+          <span class="en-only">Matched: understands instructions · reports faults</span>
+          <span class="zh-only">匹配：理解指令 ✓ · 汇报情况 ✓</span>
+        </div>
+      </div>
+      <span style="color:var(--red); font-weight:700;">→</span>
+    </a>
+
+    <a href="job-detail.html?id=maintenance" class="card roster-row" style="margin-top:14px; text-decoration:none;">
+      <div class="avatar">🔧</div>
+      <div style="flex:1;">
+        <b><span class="en-only">Equipment maintenance</span><span class="zh-only">设备维修岗</span></b>
+        <div style="font-size:13px; color:var(--ink-2); margin-top:4px;">
+          <span class="en-only">Matched: describes equipment faults</span>
+          <span class="zh-only">匹配：描述设备故障 ✓</span>
+        </div>
+      </div>
+      <span style="color:var(--red); font-weight:700;">→</span>
+    </a>
+
+    <a href="job-detail.html?id=quality" class="card roster-row" style="margin-top:14px; text-decoration:none;">
+      <div class="avatar">🔍</div>
+      <div style="flex:1;">
+        <b><span class="en-only">Quality inspection</span><span class="zh-only">质检岗</span></b>
+        <div style="font-size:13px; color:var(--ink-2); margin-top:4px;">
+          <span class="en-only">Matched: clarifies questions · reports progress</span>
+          <span class="zh-only">匹配：澄清问题 ✓ · 汇报进度 ✓</span>
+        </div>
+      </div>
+      <span style="color:var(--red); font-weight:700;">→</span>
+    </a>
+  </div>
+
+  <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:14px; text-align:center;">
+    <span class="en-only">Job listings and matching are demonstrations — no real application is submitted here.</span>
+    <span class="zh-only">岗位与匹配为演示，此处不连接真实投递。</span>
+  </p>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  function render() {
+    const r = getAssessmentResult();
+    const authorized = !!getState().authorized;
+
+    document.getElementById('notPassed').style.display = r.passed ? 'none' : 'block';
+    document.getElementById('notAuthorized').style.display = (r.passed && !authorized) ? 'block' : 'none';
+    document.getElementById('jobList').style.display = (r.passed && authorized) ? 'block' : 'none';
+  }
+  render();
+  window.onLangChange = render;
+</script>
+</body>
+</html>

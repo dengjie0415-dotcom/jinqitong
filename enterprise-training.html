@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>员工培训管理 · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="zh">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html" class="active"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" class="active" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" style="padding-top:20px;">
+
+  <div class="learn-layout">
+
+    <!-- 侧边导航 -->
+    <aside class="side-nav">
+      <div class="side-title"><span class="en-only">Enterprise</span><span class="zh-only">企业服务导航</span></div>
+      <a href="enterprise.html"><span class="en-only">Workspace</span><span class="zh-only">工作台</span></a>
+      <a href="enterprise-training.html" class="active"><span class="en-only">Staff training</span><span class="zh-only">员工培训</span></a>
+      <a href="enterprise-training-report.html"><span class="en-only">Training report</span><span class="zh-only">培训报告</span></a>
+      <a href="enterprise-recruitment.html"><span class="en-only">Recruitment</span><span class="zh-only">招聘与候选人</span></a>
+    </aside>
+
+    <!-- 主内容 -->
+    <main>
+      <h2 class="sec-title"><span class="en-only">Staff training management</span><span class="zh-only">员工培训管理</span></h2>
+      <p class="sec-sub"><span class="en-only">Demand → learning → work feedback.</span><span class="zh-only">需求 → 学习 → 工作反馈。</span></p>
+
+      <div class="steps" style="margin:18px 0;">
+        <div class="step active"><div class="dot">1</div><b><span class="en-only">Submit needs</span><span class="zh-only">提交需求</span></b><span class="en-only">jobs & pain points</span><span class="zh-only">岗位与沟通难点</span></div>
+        <div class="step"><div class="dot">2</div><b><span class="en-only">Confirm plan</span><span class="zh-only">确认培训</span></b><span class="en-only">content & quote</span><span class="zh-only">内容与报价</span></div>
+        <div class="step"><div class="dot">3</div><b><span class="en-only">Invite staff</span><span class="zh-only">邀请员工</span></b><span class="en-only">start learning</span><span class="zh-only">进入学习</span></div>
+        <div class="step"><div class="dot">4</div><b><span class="en-only">Review</span><span class="zh-only">工作反馈</span></b><span class="en-only">observe & follow up</span><span class="zh-only">观察与补练</span></div>
+      </div>
+
+      <div class="card block">
+        <h2><span class="en-only">1 · Submit training needs</span><span class="zh-only">1 · 提交培训需求</span></h2>
+        <div style="font-size:14px; color:var(--ink-2); line-height:1.9;">
+          <div>· <span class="en-only">Target jobs & headcount</span><span class="zh-only">目标岗位与人数</span></div>
+          <div>· <span class="en-only">Main communication difficulties</span><span class="zh-only">主要沟通难点</span></div>
+        </div>
+        <button class="btn btn-primary btn-sm" style="margin-top:14px;" onclick="soon(event)"><span class="en-only">Submit</span><span class="zh-only">提交</span></button>
+        <span class="tbd" style="margin-left:8px;"><span class="en-only">demo — not connected</span><span class="zh-only">演示 · 未接入</span></span>
+      </div>
+
+      <div class="card block">
+        <h2><span class="en-only">2 · Confirm content & arrangement</span><span class="zh-only">2 · 确认内容与安排</span></h2>
+        <p style="font-size:14px; color:var(--ink-2);"><span class="en-only">Confirm training content, quote and schedule with the course team.</span><span class="zh-only">与课程团队确认培训内容、报价与安排。</span></p>
+      </div>
+
+      <div class="card block">
+        <h2><span class="en-only">3 · Employees enter the learning path</span><span class="zh-only">3 · 员工进入学习路径</span></h2>
+        <a href="learning-path.html" class="btn btn-ghost btn-sm"><span class="en-only">View learning path →</span><span class="zh-only">查看学习路径 →</span></a>
+      </div>
+
+      <div class="card block">
+        <h2><span class="en-only">4 · Work feedback</span><span class="zh-only">4 · 工作反馈</span></h2>
+        <p style="font-size:14px; color:var(--ink-2); margin-bottom:10px;">
+          <span class="en-only">View learning reports (training report authorization to be added), observe real work performance, then arrange follow-up practice.</span>
+          <span class="zh-only">查看学习报告（培训报告授权功能待接入），观察实际工作表现，再安排补练或后续培训。</span>
+        </p>
+        <p class="en" style="font-size:12px; color:var(--ink-3);">
+          <span class="en-only">Training report authorization is a separate feature, not yet connected.</span>
+          <span class="zh-only">培训报告授权是独立于求职授权的一套授权，目前尚未接入。</span>
+        </p>
+        <a href="enterprise-training-report.html" class="btn btn-primary btn-sm" style="margin-top:12px;"><span class="en-only">View team ability matrix →</span><span class="zh-only">查看班组能力矩阵 →</span></a>
+      </div>
+
+      <div style="margin-top:18px;">
+        <a href="enterprise.html" class="btn btn-ghost"><span class="en-only">← Back to workspace</span><span class="zh-only">← 返回企业工作台</span></a>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="wrap" style="padding-top:20px;">
+  <div class="card" style="padding:24px;">
+    <h3 style="font-size:16px; margin-bottom:8px;">📞 <span class="en-only">Book a pilot</span><span class="zh-only">预约试点沟通</span></h3>
+    <p style="font-size:13.5px; color:var(--ink-2); margin-bottom:14px;"><span class="en-only">Leave your contact — we'll follow up about a pilot. (Demo — not connected to a backend.)</span><span class="zh-only">留下联系方式，我们跟进试点沟通。（演示 · 未接后端）</span></p>
+    <div class="grid-2" style="grid-template-columns:1fr 1fr;">
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Company</span><span class="zh-only">公司名</span></label><input class="inp" placeholder="Company name"></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Contact</span><span class="zh-only">联系人</span></label><input class="inp" placeholder="Contact name"></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">WhatsApp</span><span class="zh-only">WhatsApp 号</span></label><input class="inp" placeholder="+263 ..."></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Main need</span><span class="zh-only">主要需求</span></label><select class="inp"><option>员工培训 / Staff training</option><option>招聘对接 / Recruitment</option><option>两者都要 / Both</option></select></div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;">
+      <button class="btn btn-primary" onclick="submitLead(event)"><span class="en-only">Submit</span><span class="zh-only">提交</span></button>
+      <span class="tbd"><span class="en-only">demo · not connected</span><span class="zh-only">演示 · 未接后端</span></span>
+    </div>
+    <div style="margin-top:12px;">
+      <a href="https://wa.me/0000000000" target="_blank" style="color:var(--red); font-weight:600; font-size:13.5px;"><span class="en-only">Or contact via WhatsApp →</span><span class="zh-only">或通过 WhatsApp 联系 →</span></a>
+      <span class="tbd"><span class="en-only">number TODO</span><span class="zh-only">号码待定</span></span>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

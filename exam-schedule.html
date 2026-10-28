@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule Exam · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html" class="active"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:28px;">
+
+  <span class="pill pill-red"><span class="en-only">Certification exam · scheduling</span><span class="zh-only">认证大考 · 预约</span></span>
+  <h2 class="sec-title" style="margin-top:8px;"><span class="en-only">Schedule your exam session</span><span class="zh-only">预约考试场次</span></h2>
+  <p class="sec-sub">
+    <span class="en-only">Choose the exam format and a session date. The final format is still to be confirmed.</span>
+    <span class="zh-only">选择考试形式和场次日期。最终形式尚未确定。</span>
+  </p>
+
+  <!-- 考试形式 -->
+  <h3 style="font-size:16px; margin:20px 0 10px;"><span class="en-only">1 · Exam format</span><span class="zh-only">1 · 考试形式</span></h3>
+  <div class="grid-2">
+    <div class="card entry" id="formOnline" onclick="pickForm(this, 'online')" style="cursor:pointer;">
+      <h3 style="font-size:16px;">🖥️ <span class="en-only">Online (computer-based)</span><span class="zh-only">线上机考</span></h3>
+      <p style="font-size:13.5px; color:var(--ink-2);"><span class="en-only">Take it online — remote proctoring involves technical barriers, to be confirmed.</span><span class="zh-only">线上作答——远程监考涉及技术壁垒，方案待定。</span></p>
+    </div>
+    <div class="card entry" id="formOffline" onclick="pickForm(this, 'offline')" style="cursor:pointer;">
+      <h3 style="font-size:16px;">🏫 <span class="en-only">Offline (paper / test center)</span><span class="zh-only">线下纸笔 / 考点</span></h3>
+      <p style="font-size:13.5px; color:var(--ink-2);"><span class="en-only">Attend a test center — venue and invigilation to be confirmed.</span><span class="zh-only">前往考点参加——考场与监考安排待定。</span></p>
+    </div>
+  </div>
+
+  <!-- 场次日期 -->
+  <h3 style="font-size:16px; margin:20px 0 10px;"><span class="en-only">2 · Session date</span><span class="zh-only">2 · 考试场次</span></h3>
+  <div class="grid-2">
+    <div class="card entry" id="date1" onclick="pickDate(this)" style="cursor:pointer;">
+      <b>2026-11-28</b>
+      <div class="en" style="font-size:12.5px; color:var(--ink-3);">09:00 · <span class="en-only">Harare (demo)</span><span class="zh-only">哈拉雷（演示）</span></div>
+    </div>
+    <div class="card entry" id="date2" onclick="pickDate(this)" style="cursor:pointer;">
+      <b>2026-12-19</b>
+      <div class="en" style="font-size:12.5px; color:var(--ink-3);">14:00 · <span class="en-only">Harare (demo)</span><span class="zh-only">哈拉雷（演示）</span></div>
+    </div>
+  </div>
+
+  <!-- 提交 -->
+  <div style="margin-top:22px; display:flex; flex-wrap:wrap; align-items:center; gap:12px;">
+    <button class="btn btn-primary" onclick="submitLead(event)"><span class="en-only">Confirm booking</span><span class="zh-only">确认预约</span></button>
+    <span class="tbd"><span class="en-only">demo · not connected</span><span class="zh-only">演示 · 未接后端</span></span>
+  </div>
+
+  <div class="card" style="padding:16px 20px; margin-top:16px; display:flex; align-items:flex-start; gap:10px;">
+    <span style="color:var(--red); font-size:15px;">ℹ️</span>
+    <p style="font-size:13px; color:var(--ink-2);">
+      <span class="en-only">The exam format (online / offline) is not yet decided. Online exams require remote-proctoring infrastructure; offline exams require a test center. This is a demo schedule.</span>
+      <span class="zh-only">考试形式（线上/线下）尚未最终确定。线上需远程监考基建，线下需考点。本页为演示预约。</span>
+    </p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  let chosenForm = null, chosenDate = null;
+  function pickForm(el, form) {
+    chosenForm = form;
+    ['formOnline','formOffline'].forEach(id => document.getElementById(id).style.border = '1px solid var(--line)');
+    el.style.border = '2px solid var(--red)';
+  }
+  function pickDate(el) {
+    chosenDate = el.id;
+    ['date1','date2'].forEach(id => document.getElementById(id).style.border = '1px solid var(--line)');
+    el.style.border = '2px solid var(--red)';
+  }
+</script>
+</body>
+</html>

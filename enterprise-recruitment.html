@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>招聘与候选人 · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="zh" data-view="free">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html" class="active"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" class="active" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" style="padding-top:20px;">
+
+  <div class="learn-layout">
+
+    <aside class="side-nav">
+      <div class="side-title"><span class="en-only">Enterprise</span><span class="zh-only">企业服务导航</span></div>
+      <a href="enterprise.html"><span class="en-only">Workspace</span><span class="zh-only">工作台</span></a>
+      <a href="enterprise-training.html"><span class="en-only">Staff training</span><span class="zh-only">员工培训</span></a>
+      <a href="enterprise-training-report.html"><span class="en-only">Training report</span><span class="zh-only">培训报告</span></a>
+      <a href="enterprise-recruitment.html" class="active"><span class="en-only">Recruitment</span><span class="zh-only">招聘与候选人</span></a>
+    </aside>
+
+    <main>
+      <h2 class="sec-title"><span class="en-only">Talent pool</span><span class="zh-only">人才池</span></h2>
+      <p class="sec-sub"><span class="en-only">Candidates who passed the final assessment and opted in.</span><span class="zh-only">通过最终大考并选择进入人才池的候选人。</span></p>
+
+      <!-- 视角切换：免费 / 试点企业 -->
+      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <div class="lang-toggle">
+          <button id="btnFree" class="active" onclick="setView('free')"><span class="en-only">Free view</span><span class="zh-only">免费视角</span></button>
+          <button id="btnPaid" onclick="setView('paid')"><span class="en-only">Pilot enterprise</span><span class="zh-only">试点企业视角</span></button>
+        </div>
+        <span class="free-only tbd"><span class="en-only">demo · limited view</span><span class="zh-only">演示 · 受限视图</span></span>
+        <span class="paid-only pill pill-red"><span class="en-only">demo · full access</span><span class="zh-only">演示 · 完整权限</span></span>
+      </div>
+
+      <!-- 候选人列表 -->
+      <div id="candidates" style="margin-top:16px;">
+
+        <div class="card" style="margin-bottom:14px; overflow:hidden;">
+          <div class="roster-row" style="align-items:flex-start;">
+            <div class="avatar">塔</div>
+            <div style="flex:1;">
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <b>塔万达 · Tawanda</b>
+                <span class="pill pill-red"><span class="en-only">Chinese B · Certified</span><span class="zh-only">中文胜任力 B 级 · 已认证</span></span>
+              </div>
+              <div style="font-size:13px; color:var(--ink-2); margin-top:2px;">矿业 · 破碎机操作</div>
+              <div class="free-only" style="font-size:13px; color:var(--ink-3); margin-top:6px;">🔒 *** 专业 · *** 经验</div>
+              <div class="paid-only" style="font-size:13px; color:var(--ink-2); margin-top:6px;">矿业工程专业 · 3 年破碎机操作经验</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; padding:0 16px 16px; flex-wrap:wrap;">
+            <button class="free-only btn btn-ghost btn-sm" onclick="soon(event)">🔒 <span class="en-only">Audio locked</span><span class="zh-only">音频已锁</span></button>
+            <button class="paid-only btn btn-ghost btn-sm" onclick="say('intro')"><span class="ic">▶</span><span class="en-only">Play self-intro (TTS)</span><span class="zh-only">播放自我介绍（TTS）</span></button>
+            <button class="free-only btn btn-ghost btn-sm" onclick="soon(event)"><span class="en-only">Unlock full profile</span><span class="zh-only">付费解锁完整档案</span></button>
+            <button class="paid-only btn btn-primary btn-sm" onclick="soon(event)"><span class="en-only">View full profile</span><span class="zh-only">查看完整档案</span></button>
+            <button class="paid-only btn btn-gold btn-sm" onclick="soon(event)"><span class="en-only">Contact / interview</span><span class="zh-only">发起面试</span></button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:14px; overflow:hidden;">
+          <div class="roster-row" style="align-items:flex-start;">
+            <div class="avatar">琪</div>
+            <div style="flex:1;">
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <b>琪波 · Chipo</b>
+                <span class="pill pill-red"><span class="en-only">Chinese B · Certified</span><span class="zh-only">中文胜任力 B 级 · 已认证</span></span>
+              </div>
+              <div style="font-size:13px; color:var(--ink-2); margin-top:2px;">质检岗</div>
+              <div class="free-only" style="font-size:13px; color:var(--ink-3); margin-top:6px;">🔒 *** 专业 · *** 经验</div>
+              <div class="paid-only" style="font-size:13px; color:var(--ink-2); margin-top:6px;">质检/材料专业 · 2 年质检经验</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; padding:0 16px 16px; flex-wrap:wrap;">
+            <button class="free-only btn btn-ghost btn-sm" onclick="soon(event)">🔒 <span class="en-only">Audio locked</span><span class="zh-only">音频已锁</span></button>
+            <button class="paid-only btn btn-ghost btn-sm" onclick="say('intro')"><span class="ic">▶</span><span class="en-only">Play self-intro (TTS)</span><span class="zh-only">播放自我介绍（TTS）</span></button>
+            <button class="free-only btn btn-ghost btn-sm" onclick="soon(event)"><span class="en-only">Unlock full profile</span><span class="zh-only">付费解锁完整档案</span></button>
+            <button class="paid-only btn btn-primary btn-sm" onclick="soon(event)"><span class="en-only">View full profile</span><span class="zh-only">查看完整档案</span></button>
+            <button class="paid-only btn btn-gold btn-sm" onclick="soon(event)"><span class="en-only">Contact / interview</span><span class="zh-only">发起面试</span></button>
+          </div>
+        </div>
+
+        <div class="card" style="overflow:hidden;">
+          <div class="roster-row" style="align-items:flex-start;">
+            <div class="avatar">穆</div>
+            <div style="flex:1;">
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <b>穆萨 · Musa</b>
+                <span class="pill pill-red"><span class="en-only">Chinese A · Certified</span><span class="zh-only">中文胜任力 A 级 · 已认证</span></span>
+              </div>
+              <div style="font-size:13px; color:var(--ink-2); margin-top:2px;">设备维修岗</div>
+              <div class="free-only" style="font-size:13px; color:var(--ink-3); margin-top:6px;">🔒 *** 专业 · *** 经验</div>
+              <div class="paid-only" style="font-size:13px; color:var(--ink-2); margin-top:6px;">机械/电气专业 · 4 年设备维修经验</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; padding:0 16px 16px; flex-wrap:wrap;">
+            <button class="free-only btn btn-ghost btn-sm" onclick="soon(event)">🔒 <span class="en-only">Audio locked</span><span class="zh-only">音频已锁</span></button>
+            <button class="paid-only btn btn-ghost btn-sm" onclick="say('intro')"><span class="ic">▶</span><span class="en-only">Play self-intro (TTS)</span><span class="zh-only">播放自我介绍（TTS）</span></button>
+            <button class="free-only btn btn-ghost btn-sm" onclick="soon(event)"><span class="en-only">Unlock full profile</span><span class="zh-only">付费解锁完整档案</span></button>
+            <button class="paid-only btn btn-primary btn-sm" onclick="soon(event)"><span class="en-only">View full profile</span><span class="zh-only">查看完整档案</span></button>
+            <button class="paid-only btn btn-gold btn-sm" onclick="soon(event)"><span class="en-only">Contact / interview</span><span class="zh-only">发起面试</span></button>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:14px;">
+        <span class="en-only">Candidate data is demo. The talent pool only shows learners who passed the final assessment and opted in. Pricing and unlocking rules are to be decided.</span>
+        <span class="zh-only">候选人数据为演示。人才池只展示通过最终大考并主动选择进入的学员；付费与解锁规则待定。</span>
+      </p>
+
+      <div style="margin-top:18px;">
+        <a href="enterprise.html" class="btn btn-ghost"><span class="en-only">← Back to workspace</span><span class="zh-only">← 返回企业工作台</span></a>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="wrap" style="padding-top:20px;">
+  <div class="card" style="padding:24px;">
+    <h3 style="font-size:16px; margin-bottom:8px;">📞 <span class="en-only">Book a pilot</span><span class="zh-only">预约试点沟通</span></h3>
+    <p style="font-size:13.5px; color:var(--ink-2); margin-bottom:14px;"><span class="en-only">Leave your contact — we'll follow up about a pilot. (Demo — not connected to a backend.)</span><span class="zh-only">留下联系方式，我们跟进试点沟通。（演示 · 未接后端）</span></p>
+    <div class="grid-2" style="grid-template-columns:1fr 1fr;">
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Company</span><span class="zh-only">公司名</span></label><input class="inp" placeholder="Company name"></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Contact</span><span class="zh-only">联系人</span></label><input class="inp" placeholder="Contact name"></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">WhatsApp</span><span class="zh-only">WhatsApp 号</span></label><input class="inp" placeholder="+263 ..."></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Main need</span><span class="zh-only">主要需求</span></label><select class="inp"><option>员工培训 / Staff training</option><option>招聘对接 / Recruitment</option><option>两者都要 / Both</option></select></div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;">
+      <button class="btn btn-primary" onclick="submitLead(event)"><span class="en-only">Submit</span><span class="zh-only">提交</span></button>
+      <span class="tbd"><span class="en-only">demo · not connected</span><span class="zh-only">演示 · 未接后端</span></span>
+    </div>
+    <div style="margin-top:12px;">
+      <a href="https://wa.me/0000000000" target="_blank" style="color:var(--red); font-weight:600; font-size:13.5px;"><span class="en-only">Or contact via WhatsApp →</span><span class="zh-only">或通过 WhatsApp 联系 →</span></a>
+      <span class="tbd"><span class="en-only">number TODO</span><span class="zh-only">号码待定</span></span>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

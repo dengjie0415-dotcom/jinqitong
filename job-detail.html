@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Detail · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html" class="active"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:28px;">
+
+  <div id="notFound" class="card" style="padding:28px; margin-top:16px; text-align:center; display:none;">
+    <div style="font-size:36px;">🔍</div>
+    <p style="font-size:15px; color:var(--ink-2); margin:10px 0 16px;">
+      <span class="en-only">This job does not exist.</span>
+      <span class="zh-only">该岗位不存在。</span>
+    </p>
+    <a href="jobs.html" class="btn btn-primary"><span class="en-only">← Back to recommended jobs</span><span class="zh-only">← 返回推荐岗位</span></a>
+  </div>
+
+  <div id="jobContent">
+
+  <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:6px;">
+    <span class="pill pill-red"><span class="en-only">Demo job</span><span class="zh-only">演示岗位</span></span>
+    <span class="pill pill-gray"><span class="en-only">Example data</span><span class="zh-only">示例数据</span></span>
+  </div>
+  <h2 class="sec-title"><span id="jobIcon">⛏️</span> <span id="jobTitle">…</span></h2>
+  <p class="sec-sub"><span class="en-only">Confirm the requirements, then submit your application.</span><span class="zh-only">确认要求，再提交申请。</span></p>
+
+  <!-- 岗位要求 -->
+  <div class="card" style="padding:24px; margin-top:16px;">
+    <div style="font-size:13px; font-weight:700; color:var(--ink-3); letter-spacing:.04em; text-transform:uppercase; margin-bottom:10px;"><span class="en-only">Requirements</span><span class="zh-only">岗位要求</span></div>
+    <div style="font-size:14.5px; color:var(--ink-2); line-height:2;">
+      <div>· <b class="en-only">Company</b><b class="zh-only">企业</b>：<span class="en-only">Mining enterprise (demo)</span><span class="zh-only">矿业企业（演示）</span></div>
+      <div>· <b class="en-only">Location</b><b class="zh-only">工作地点</b>：<span class="en-only">Zimbabwe (demo)</span><span class="zh-only">津巴布韦（演示）</span></div>
+      <div>· <b class="en-only">Field</b><b class="zh-only">专业</b>：<span id="jobField">…</span></div>
+      <div>· <b class="en-only">Duties</b><b class="zh-only">职责</b>：<span id="jobDuty">…</span></div>
+      <div>· <b class="en-only">Experience</b><b class="zh-only">经验</b>：<span class="en-only">Overall assessment; experience preferred</span><span class="zh-only">综合评估，有经验优先</span></div>
+      <div>· <b class="en-only">Chinese</b><b class="zh-only">中文要求</b>：<span class="en-only">Understand instructions, describe problems, report progress</span><span class="zh-only">听懂工作指令、描述问题、汇报进度</span></div>
+    </div>
+  </div>
+
+  <!-- 申请流程（演示） -->
+  <div class="card" style="padding:24px; margin-top:16px;">
+    <div style="font-size:13px; font-weight:700; color:var(--ink-3); letter-spacing:.04em; text-transform:uppercase; margin-bottom:10px;"><span class="en-only">Application flow</span><span class="zh-only">申请流程</span></div>
+    <div class="steps" style="margin:0;">
+      <div class="step"><div class="dot">1</div><b class="en-only">Submit</b><b class="zh-only">提交申请</b><span class="en-only">demo</span><span class="zh-only">演示</span></div>
+      <div class="step"><div class="dot">2</div><b class="en-only">Employer review</b><b class="zh-only">企业接收</b><span class="en-only">demo</span><span class="zh-only">演示</span></div>
+      <div class="step"><div class="dot">3</div><b class="en-only">Interview & review</b><b class="zh-only">面试与专业审核</b><span class="en-only">demo</span><span class="zh-only">演示</span></div>
+      <div class="step"><div class="dot">4</div><b class="en-only">Decision</b><b class="zh-only">企业决定录用</b><span class="en-only">demo</span><span class="zh-only">演示</span></div>
+    </div>
+    <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:14px;">
+      <span class="en-only">This is a demo flow — no real application is submitted, and employment is not promised.</span>
+      <span class="zh-only">这里只画申请流程，不连接真实投递，不承诺录用。</span>
+    </p>
+  </div>
+
+  <!-- 申请按钮（演示） -->
+  <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:12px;">
+    <button class="btn btn-primary" onclick="soon(event)"><span class="en-only">Submit application</span><span class="zh-only">提交申请</span></button>
+    <span class="tbd" style="align-self:center;"><span class="en-only">demo — not connected</span><span class="zh-only">演示 · 未接入</span></span>
+  </div>
+  <div style="margin-top:14px;">
+    <a href="jobs.html" class="btn btn-ghost"><span class="en-only">← Back to recommended jobs</span><span class="zh-only">← 返回推荐岗位</span></a>
+  </div>
+
+  </div><!-- /jobContent -->
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  const JOBS = {
+    crusher: {
+      icon: '⛏️',
+      title: { en: 'Mining · Crusher operator', zh: '矿业 · 破碎机操作岗' },
+      field: { en: 'Mining / engineering background preferred', zh: '矿业或工程背景优先' },
+      duty: { en: 'Operate and monitor crushing equipment; report faults and output.', zh: '操作与监控破碎设备；报告故障与产量。' }
+    },
+    maintenance: {
+      icon: '🔧',
+      title: { en: 'Equipment maintenance', zh: '设备维修岗' },
+      field: { en: 'Mechanical / electrical background preferred', zh: '机械或电气背景优先' },
+      duty: { en: 'Inspect, maintain and repair equipment; describe faults clearly.', zh: '检查、维护与维修设备；清晰描述故障。' }
+    },
+    quality: {
+      icon: '🔍',
+      title: { en: 'Quality inspection', zh: '质检岗' },
+      field: { en: 'Quality / materials background preferred', zh: '质检或材料背景优先' },
+      duty: { en: 'Inspect products, record defects and report progress.', zh: '检查产品、记录缺陷、汇报进度。' }
+    }
+  };
+
+  function render() {
+    const zh = isZh();
+    const VALID_IDS = ['crusher', 'maintenance', 'quality'];
+    const idParam = new URLSearchParams(location.search).get('id');
+    const jobId = VALID_IDS.includes(idParam) ? idParam : null;
+
+    const notFound = document.getElementById('notFound');
+    const content = document.getElementById('jobContent');
+    if (!jobId) {
+      notFound.style.display = 'block';
+      content.style.display = 'none';
+      return;
+    }
+    notFound.style.display = 'none';
+    content.style.display = 'block';
+
+    const job = JOBS[jobId];
+    document.getElementById('jobIcon').textContent = job.icon;
+    document.getElementById('jobTitle').textContent = job.title[zh ? 'zh' : 'en'];
+    document.getElementById('jobField').textContent = job.field[zh ? 'zh' : 'en'];
+    document.getElementById('jobDuty').textContent = job.duty[zh ? 'zh' : 'en'];
+  }
+  render();
+  window.onLangChange = render;
+</script>
+</body>
+</html>

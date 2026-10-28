@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>津企通 JinQiTong · Job Chinese for Zimbabwe</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<!-- 顶部导航 -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="active"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="signin" href="signup.html" style="text-decoration:none; cursor:pointer;"><span class="en-only">Sign in</span><span class="zh-only">登录</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero：明确定位 -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow en-only">Vocational Chinese for the workplace</span>
+    <span class="eyebrow zh-only">面向职场的岗位中文</span>
+    <h1>
+      <span class="en-only">Chinese for the work you do.</span>
+      <span class="zh-only">学工作中真正用得到的中文。</span>
+    </h1>
+    <p class="lead">
+      <span class="en-only">Understand instructions, report problems, coordinate with colleagues — practice with real job-based tasks and quizzes.</span>
+      <span class="zh-only">听懂指令、汇报问题、与同事协作——围绕真实岗位任务练习与测评。</span>
+    </p>
+
+    <!-- 主 CTA：体验样课 -->
+    <div style="margin-top:22px; display:flex; flex-wrap:wrap; gap:12px;">
+      <a href="lesson.html" class="btn btn-primary btn-lg"><span class="en-only">Try the sample lesson →</span><span class="zh-only">体验样课 →</span></a>
+    </div>
+
+    <!-- 三入口 -->
+    <div class="entry-grid">
+      <div class="card entry">
+        <div class="tag en-only">For job seekers</div>
+        <div class="tag zh-only">求职准备</div>
+        <h3><span class="en-only">I want to work at a Chinese company</span><span class="zh-only">我想进入中资企业</span></h3>
+        <p><span class="en-only">Start with a free 2-minute meaning check, then learn the Chinese for your target job.</span><span class="zh-only">先做 2 分钟免费句意小测，再学目标岗位的中文。</span></p>
+        <a href="quick-check.html" class="btn btn-ghost btn-block"><span class="en-only">Free check</span><span class="zh-only">免费小测</span></a>
+        <div class="note"><span class="en-only">Free · No sign-up</span><span class="zh-only">免费 · 无需注册</span></div>
+      </div>
+
+      <div class="card entry">
+        <div class="tag en-only">For employees</div>
+        <div class="tag zh-only">在职提升</div>
+        <h3><span class="en-only">I work at a Chinese company and want to improve</span><span class="zh-only">我已在中资企业工作，想提升沟通</span></h3>
+        <p><span class="en-only">Improve the communication you need in your current role, then apply it back at work.</span><span class="zh-only">提升当前岗位需要的沟通能力，学完回到工作中直接用。</span></p>
+        <a href="learning-path.html" class="btn btn-ghost btn-block"><span class="en-only">View learning path</span><span class="zh-only">查看学习路径</span></a>
+      </div>
+
+      <div class="card entry">
+        <div class="tag en-only">For employers</div>
+        <div class="tag zh-only">企业服务</div>
+        <h3><span class="en-only">Train staff or hire talent</span><span class="zh-only">培训员工 / 招聘人才</span></h3>
+        <p><span class="en-only">Staff training and candidate matching for Chinese-invested companies.</span><span class="zh-only">为中资企业提供员工中文培训与候选人对接。</span></p>
+        <button class="btn btn-ghost btn-block" onclick="soon(event)"><span class="en-only">Enterprise workspace</span><span class="zh-only">企业工作台</span></button>
+        <div class="note"><span class="en-only"><b style="color:var(--ink-3);font-weight:600;">coming soon</b></span><span class="zh-only"><b style="color:var(--ink-3);font-weight:600;">即将上线</b></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 样课预览 -->
+<section class="hero" style="padding-top: 8px;">
+  <div class="wrap">
+    <h2 class="sec-title">
+      <span class="en-only">Try a sample lesson</span>
+      <span class="zh-only">试一节样课</span>
+    </h2>
+    <p class="sec-sub">
+      <span class="en-only">One real job task, so you can see what "job Chinese" actually looks like.</span>
+      <span class="zh-only">一节真实岗位任务，直观感受"岗位中文"到底学什么。</span>
+    </p>
+
+    <div class="card" style="padding:24px; margin-top:16px;">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px;">
+        <span class="pill pill-red en-only">Scenario · Report a machine fault</span>
+        <span class="pill pill-red zh-only">场景 · 向主管报告设备故障</span>
+        <span class="pill pill-gray">第 3 课 · Lesson 3</span>
+      </div>
+
+      <div class="card" style="box-shadow:none; border:1px solid var(--line-2); padding:16px 18px; margin-bottom:16px;">
+        <div class="zh" style="font-size:17px; font-weight:600;">"这台设备有故障，请过来看一下。"</div>
+        <div class="py" style="color:var(--red); font-size:13px; font-weight:600; margin-top:3px;">"Zhè tái shèbèi yǒu gùzhàng, qǐng guòlai kàn yíxià."</div>
+        <div class="en" style="color:var(--ink-2); font-size:13px; margin-top:3px;">"This machine has a fault — please come and have a look."</div>
+        <button class="play-btn" style="margin-top:10px;" onclick="speakOne('这台设备有故障，请过来看一下。')">🔊 <span class="en-only">Listen</span><span class="zh-only">试听</span></button>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px;">
+        <span class="chip"><span class="en-only">1 · Read the dialogue</span><span class="zh-only">1 · 看对话</span></span>
+        <span class="chip"><span class="en-only">2 · Learn the words</span><span class="zh-only">2 · 学词汇</span></span>
+        <span class="chip"><span class="en-only">3 · Try one practice</span><span class="zh-only">3 · 做一道练习</span></span>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:14px;">
+        <a href="lesson.html" class="btn btn-primary"><span class="en-only">Open sample lesson →</span><span class="zh-only">打开样课 →</span></a>
+        <span class="note" style="font-size:12.5px; color:var(--ink-3);"><span class="en-only">Machine-read (TTS) — real recording to be added</span><span class="zh-only">机器朗读（TTS），真人录音待接入</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 学习闭环 -->
+<section class="hero" style="padding-top: 8px;">
+  <div class="wrap">
+    <h2 class="sec-title">
+      <span class="en-only">How learning works</span>
+      <span class="zh-only">学习闭环</span>
+    </h2>
+    <p class="sec-sub">
+      <span class="en-only">A loop, not a one-way course — keep improving the weak spots.</span>
+      <span class="zh-only">不是单向课程，而是一个循环——薄弱项持续补练。</span>
+    </p>
+
+    <div class="steps">
+      <div class="step"><div class="dot">1</div><b class="en-only">Learn a job task</b><b class="zh-only">学习岗位任务</b><span class="en-only">words · dialogue</span><span class="zh-only">词汇·对话</span></div>
+      <div class="step"><div class="dot">2</div><b class="en-only">Take the assessment</b><b class="zh-only">完成测评</b><span class="en-only">check yourself</span><span class="zh-only">检验掌握</span></div>
+      <div class="step"><div class="dot">3</div><b class="en-only">See the feedback</b><b class="zh-only">查看反馈</b><span class="en-only">what to improve</span><span class="zh-only">看清薄弱项</span></div>
+      <div class="step"><div class="dot">↺</div><b class="en-only">Practice weak spots</b><b class="zh-only">针对性补练</b><span class="en-only">then back to task</span><span class="zh-only">再回到任务</span></div>
+    </div>
+
+    <div class="card" style="padding:16px 20px; display:flex; align-items:flex-start; gap:10px;">
+      <span style="color:var(--red); font-size:15px;">ℹ️</span>
+      <p style="font-size:13.5px; color:var(--ink-2);">
+        <span class="en-only">The entry check is free. Course details and registration will be announced when available.</span>
+        <span class="zh-only">入口小测免费。课程内容与报名信息将在开放时公布。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 认证大考入口 -->
+<section class="hero" style="padding-top: 8px;">
+  <div class="wrap">
+    <div class="card" style="padding:26px; display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between;">
+      <div style="flex:1; min-width:260px;">
+        <span class="pill pill-red"><span class="en-only">Certification exam</span><span class="zh-only">认证大考</span></span>
+        <h2 class="sec-title" style="margin-top:8px;"><span class="en-only">Finish the course — earn your A/B certification</span><span class="zh-only">学完课程，考取 A/B 级认证</span></h2>
+        <p class="sec-sub" style="max-width:540px;"><span class="en-only">A formal exam: register, schedule a session, take a timed test. Passing earns the enterprise-recognized certification and entry to the talent pool.</span><span class="zh-only">正式认证考试：报名、预约场次、限时考试，通过即获企业认可的语言认证，进入人才池。</span></p>
+      </div>
+      <a href="exam-register.html" class="btn btn-primary btn-lg"><span class="en-only">Register for the exam →</span><span class="zh-only">报名认证大考 →</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

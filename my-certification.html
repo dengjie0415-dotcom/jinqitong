@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Certification · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html" class="active"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:28px;">
+
+  <h2 class="sec-title"><span class="en-only">My certification</span><span class="zh-only">我的认证</span></h2>
+  <p class="sec-sub"><span class="en-only">Your stage-check result and the certification exam progress.</span><span class="zh-only">你的阶段测评结果，以及认证大考进度。</span></p>
+
+  <!-- 认证等级 -->
+  <div class="card" style="padding:24px; margin-top:16px; text-align:center;">
+    <div style="font-size:36px;">🎓</div>
+    <div style="font-size:28px; font-weight:800; color:var(--red);"><span class="en-only">Not yet certified</span><span class="zh-only">尚未获得认证</span></div>
+    <p class="en" style="font-size:13px; color:var(--ink-3); margin-top:6px;">
+      <span class="en-only">Pass the certification exam to earn your A/B level.</span>
+      <span class="zh-only">通过认证大考后，可获得 A/B 级认证。</span>
+    </p>
+  </div>
+
+  <!-- 阶段测评 -->
+  <div class="card" style="padding:24px; margin-top:16px;">
+    <h3 style="font-size:16px; margin-bottom:10px;">📋 <span class="en-only">Stage check</span><span class="zh-only">阶段测评</span></h3>
+    <div id="stageView"></div>
+  </div>
+
+  <!-- 大考流程 -->
+  <div class="card" style="padding:24px; margin-top:16px;">
+    <h3 style="font-size:16px; margin-bottom:10px;">🧭 <span class="en-only">Certification exam</span><span class="zh-only">认证大考流程</span></h3>
+    <div class="steps" style="margin:14px 0;">
+      <div class="step"><div class="dot">1</div><b><span class="en-only">Register</span><span class="zh-only">报名</span></b></div>
+      <div class="step"><div class="dot">2</div><b><span class="en-only">Schedule</span><span class="zh-only">预约</span></b></div>
+      <div class="step"><div class="dot">3</div><b><span class="en-only">Exam</span><span class="zh-only">考试</span></b></div>
+      <div class="step"><div class="dot">4</div><b><span class="en-only">Result</span><span class="zh-only">出分</span></b></div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:12px;">
+      <a href="exam-register.html" class="btn btn-primary"><span class="en-only">Register for the exam →</span><span class="zh-only">报名大考 →</span></a>
+    </div>
+    <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:10px;">
+      <span class="en-only">The exam page and result page will be added after the online/offline format is confirmed.</span>
+      <span class="zh-only">考试页与出分页将在考试形式确认后接入。</span>
+    </p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  const ABILITY_LABELS = [
+    { key: 'listen', en: 'Understand', zh: '听得懂' },
+    { key: 'express', en: 'Express', zh: '说得清' },
+    { key: 'collab', en: 'Collaborate', zh: '能协作' }
+  ];
+  function render() {
+    const r = getAssessmentResult();
+    const zh = isZh();
+    const v = document.getElementById('stageView');
+    if (!r.complete) {
+      v.innerHTML = `<p style="font-size:14px; color:var(--ink-2);">${zh ? '尚未完成阶段测评。' : 'No stage check yet.'} <a href="assessment.html" style="color:var(--red);font-weight:600;">${zh ? '去测评 →' : 'Take it →'}</a></p>`;
+      return;
+    }
+    const levelText = r.level === 'A' ? 'A' : (r.level === 'B' ? 'B' : '');
+    let html = `<div style="margin-bottom:8px;">${r.passed ? `<span class="pill pill-red">${zh ? '阶段测评达标（' : 'Stage check passed ('}${levelText}${zh ? ' 等）' : ')'}</span>` : `<span class="pill pill-gray">${zh ? '阶段测评未达标' : 'Stage check not passed'}</span>`}</div>`;
+    html += `<div style="font-size:13.5px; color:var(--ink-2); line-height:1.9;">`;
+    for (const lab of ABILITY_LABELS) {
+      const qs = r.ABILITIES[lab.key];
+      const cnt = qs.filter(q => r.answers[q] === true).length;
+      html += `<div>${cnt >= 1 ? '✅' : '⚠️'} ${lab[zh?'zh':'en']} <span style="color:var(--ink-3);">${cnt}/${qs.length}</span></div>`;
+    }
+    html += `</div>`;
+    v.innerHTML = html;
+  }
+  render();
+  window.onLangChange = render;
+</script>
+</body>
+</html>

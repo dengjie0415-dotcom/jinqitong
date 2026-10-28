@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson · Report a Machine Fault — 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html" class="active"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:20px;">
+
+  <!-- 步骤条 -->
+  <div class="steps">
+    <div class="step active"><div class="dot">1</div><b class="en-only">Words</b><b class="zh-only">生词</b></div>
+    <div class="step"><div class="dot">2</div><b class="en-only">Dialogue</b><b class="zh-only">对话</b></div>
+    <div class="step"><div class="dot">3</div><b class="en-only">Grammar</b><b class="zh-only">语言点</b></div>
+    <div class="step"><div class="dot">4</div><b class="en-only">Practice</b><b class="zh-only">练习</b></div>
+    <div class="step"><div class="dot">5</div><b class="en-only">Task</b><b class="zh-only">任务</b></div>
+  </div>
+
+  <!-- 课头 + 任务 -->
+  <div class="block">
+    <span class="pill pill-red en-only">B · On the Job</span>
+    <span class="pill pill-red zh-only">B · 岗位工作</span>
+    <span class="pill pill-gray">第 3 课 · Lesson 3</span>
+    <h1 style="font-size:24px; font-weight:800; margin:10px 0 2px;">这台设备有故障</h1>
+    <p class="sec-sub en-only">This Machine Has a Fault</p>
+    <p class="sec-sub zh-only">这台设备有故障</p>
+    <div class="task-box">
+      <div style="font-size:13px; color:var(--ink-2); margin-bottom:4px;">
+        <span class="en-only">Communication task for this lesson</span>
+        <span class="zh-only">本课要完成的沟通任务</span>
+      </div>
+      <b>
+        <span class="en-only">Report a machine fault and ask the supervisor to come over.</span>
+        <span class="zh-only">报告设备故障，并请主管过来看一下。</span>
+      </b>
+    </div>
+  </div>
+
+  <!-- Step 1 生词 -->
+  <div class="card block">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+      <span class="pill pill-red">1</span>
+      <h2 style="margin:0;"><span class="en-only">Vocabulary</span><span class="zh-only">生词</span></h2>
+    </div>
+    <p class="hint"><span class="en-only">Tap a card to show pinyin and meaning.</span><span class="zh-only">点击词卡查看拼音与释义。</span></p>
+    <div class="word-grid" id="wordGrid"></div>
+  </div>
+
+  <!-- Step 2 对话 -->
+  <div class="card block" id="sec-dialogue">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+      <span class="pill pill-red">2</span>
+      <h2 style="margin:0;"><span class="en-only">Workplace dialogue</span><span class="zh-only">场景对话</span></h2>
+    </div>
+    <p class="hint"><span class="en-only">A sample workshop conversation. Audio is machine-read (TTS) — real recordings to be added.</span><span class="zh-only">车间场景示例对话。音频为机器朗读（TTS），真人录音待接入。</span></p>
+    <button class="play-btn" onclick="speakSequence(['王主管，请过来看一下！','好的。有问题吗？','这台设备有问题。','我检查一下。这台设备有故障。请关机。','好的。谢谢！'])"><span class="ic">▶</span><span class="en-only">Play whole dialogue</span><span class="zh-only">整段连播</span></button>
+    <div class="dialog">
+      <div class="dialog-line"><span class="who">塔万达</span><div style="flex:1;"><div class="zh">王主管，请过来看一下！</div><div class="py">Wáng zhǔguǎn, qǐng guòlai kàn yíxià!</div><div class="en">Supervisor Wang, please come and have a look!</div></div><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="speakOne('王主管，请过来看一下！')">🔊</button><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="recordVoice(this)">🎤</button></div>
+      <div class="dialog-line"><span class="who">王主管</span><div style="flex:1;"><div class="zh">好的。有问题吗？</div><div class="py">Hǎo de. Yǒu wèntí ma?</div><div class="en">OK. Is there a problem?</div></div><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="speakOne('好的。有问题吗？')">🔊</button><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="recordVoice(this)">🎤</button></div>
+      <div class="dialog-line"><span class="who">塔万达</span><div style="flex:1;"><div class="zh">这台设备有问题。</div><div class="py">Zhè tái shèbèi yǒu wèntí.</div><div class="en">This machine has a problem.</div></div><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="speakOne('这台设备有问题。')">🔊</button><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="recordVoice(this)">🎤</button></div>
+      <div class="dialog-line"><span class="who">王主管</span><div style="flex:1;"><div class="zh">我检查一下。……这台设备有故障。请关机。</div><div class="py">Wǒ jiǎnchá yíxià. …… Zhè tái shèbèi yǒu gùzhàng. Qǐng guānjī.</div><div class="en">Let me check. ... This machine has a fault. Please shut it down.</div></div><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="speakOne('我检查一下。这台设备有故障。请关机。')">🔊</button><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="recordVoice(this)">🎤</button></div>
+      <div class="dialog-line"><span class="who">塔万达</span><div style="flex:1;"><div class="zh">好的。谢谢！</div><div class="py">Hǎo de. Xièxie!</div><div class="en">OK. Thank you!</div></div><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="speakOne('好的。谢谢！')">🔊</button><button class="play-btn" style="padding:5px 9px;font-size:12px;" onclick="recordVoice(this)">🎤</button></div>
+    </div>
+  </div>
+
+  <!-- Step 3 语言点 -->
+  <div class="card block" id="sec-grammar">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+      <span class="pill pill-red">3</span>
+      <h2 style="margin:0;"><span class="en-only">Grammar points</span><span class="zh-only">语言点</span></h2>
+    </div>
+
+    <h3 style="font-size:15px; margin:8px 0 6px;">1. 这 + 量词 + 名词 <span class="en">this + measure word + noun</span></h3>
+    <div class="card" style="box-shadow:none; border:1px solid var(--line-2); padding:14px; margin-bottom:10px;">
+      <div class="zh">这<span style="color:var(--red);">台</span>设备有故障。</div>
+      <div class="py" style="color:var(--ink-3); font-size:12.5px;">Zhè tái shèbèi yǒu gùzhàng.</div>
+      <div class="en" style="color:var(--ink-3); font-size:12.5px;">This machine has a fault. (机器用"台")</div>
+    </div>
+
+    <h3 style="font-size:15px; margin:8px 0 6px;">2. V + 一下 <span class="en">do it briefly (softens a request)</span></h3>
+    <div class="card" style="box-shadow:none; border:1px solid var(--line-2); padding:14px;">
+      <div class="zh">请过来看<span style="color:var(--red);">一下</span>。</div>
+      <div class="py" style="color:var(--ink-3); font-size:12.5px;">Qǐng guòlai kàn yíxià.</div>
+      <div class="en" style="color:var(--ink-3); font-size:12.5px;">Please come and have a look (briefly).</div>
+    </div>
+  </div>
+
+  <!-- Step 4 练习（3 种题型） -->
+  <div class="card block">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+      <span class="pill pill-red">4</span>
+      <h2 style="margin:0;"><span class="en-only">Practice</span><span class="zh-only">练习</span></h2>
+    </div>
+    <p class="hint"><span class="en-only">Three question types. (Listening questions come after audio is added.)</span><span class="zh-only">三种题型。（听力题将在接入音频后提供。）</span></p>
+
+    <!-- 题型1 句意理解 -->
+    <div style="border-top:1px solid var(--line-2); padding-top:14px; margin-top:14px;">
+      <span class="pill pill-gray"><span class="en-only">Type 1 · Meaning</span><span class="zh-only">题型1 · 句意理解</span></span>
+      <div class="task-box" style="background:var(--bg); border-color:var(--line);">
+        <div class="zh" style="font-size:18px; font-weight:700;">这台设备有故障。</div>
+        <div class="py" style="color:var(--red); font-size:13px; font-weight:600; margin-top:3px;">Zhè tái shèbèi yǒu gùzhàng.</div>
+      </div>
+      <div style="font-size:14px; color:var(--ink-2); margin:10px 0 4px;"><span class="en-only">What does this mean?</span><span class="zh-only">这句话是什么意思？</span></div>
+      <div data-shuffle>
+        <button class="opt" data-q="p1" data-correct="1"><span class="key">A</span>This machine has a fault.</button>
+        <button class="opt" data-q="p1"><span class="key">B</span>This machine has been checked.</button>
+        <button class="opt" data-q="p1"><span class="key">C</span>Please check this machine.</button>
+      </div>
+      <div id="fb-p1" class="fb" style="margin-top:8px; font-size:14px;"></div>
+    </div>
+
+    <!-- 题型2 选词填空 -->
+    <div style="border-top:1px solid var(--line-2); padding-top:14px; margin-top:14px;">
+      <span class="pill pill-gray"><span class="en-only">Type 2 · Fill in the blank</span><span class="zh-only">题型2 · 选词填空</span></span>
+      <div style="font-size:18px; font-weight:700; margin:10px 0;">请过来看一<span style="color:var(--red);">____</span>。</div>
+      <div data-shuffle>
+        <button class="opt" data-q="p2" data-correct="1"><span class="key">A</span>下</button>
+        <button class="opt" data-q="p2"><span class="key">B</span>了</button>
+        <button class="opt" data-q="p2"><span class="key">C</span>吗</button>
+      </div>
+      <div id="fb-p2" class="fb" style="margin-top:8px; font-size:14px;"></div>
+    </div>
+
+    <!-- 题型3 情景应对 -->
+    <div id="sec-collab" style="border-top:1px solid var(--line-2); padding-top:14px; margin-top:14px;">
+      <span class="pill pill-gray"><span class="en-only">Type 3 · Respond in context</span><span class="zh-only">题型3 · 情景应对</span></span>
+      <div style="font-size:15px; margin:10px 0 4px;"><span class="en-only">The supervisor says "请过来看一下". What do you reply?</span><span class="zh-only">主管说"请过来看一下"，你该怎么回应？</span></div>
+      <div data-shuffle>
+        <button class="opt" data-q="p3"><span class="key">A</span>谢谢。</button>
+        <button class="opt" data-q="p3" data-correct="1"><span class="key">B</span>好的，我过来。</button>
+        <button class="opt" data-q="p3"><span class="key">C</span>再见。</button>
+      </div>
+      <div id="fb-p3" class="fb" style="margin-top:8px; font-size:14px;"></div>
+    </div>
+  </div>
+
+  <!-- Step 5 任务小结 -->
+  <div class="card block" style="background:var(--red-50);">
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+      <span class="pill pill-red">5</span>
+      <h2 style="margin:0;"><span class="en-only">Lesson task</span><span class="zh-only">本课任务</span></h2>
+    </div>
+    <p style="font-size:14.5px; color:var(--ink-2);">
+      <span class="en-only">You can now report a machine fault and ask the supervisor to come over. Ready for the assessment?</span>
+      <span class="zh-only">现在你能报告设备故障，并请主管过来看一下了。准备好测评了吗？</span>
+    </p>
+    <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:12px;">
+      <a href="assessment.html" class="btn btn-primary"><span class="en-only">Take the assessment →</span><span class="zh-only">去测评 →</span></a>
+      <a href="learning-path.html" class="btn btn-ghost"><span class="en-only">Back to learning path</span><span class="zh-only">返回学习路径</span></a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  shuffleOptions('[data-shuffle]');
+
+  /* P1-3 补练定向：?focus=listen|express|collab */
+  (function applyFocus() {
+    const p = new URLSearchParams(location.search).get('focus');
+    const map = { listen: 'sec-dialogue', express: 'sec-grammar', collab: 'sec-collab' };
+    const id = map[p];
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const labels = { listen: { en: 'Listening / dialogue', zh: '听得懂' }, express: { en: 'Expressing / grammar', zh: '说得清' }, collab: { en: 'Collaboration / scenario', zh: '能协作' } };
+    const bar = document.createElement('div');
+    bar.style.cssText = 'padding:12px 18px; margin-bottom:16px; border:1px solid var(--red); border-radius:12px; background:var(--red-50);';
+    bar.innerHTML = `<b style="color:var(--red);">${isZh() ? '本次针对：' : 'Focus this session: '}${labels[p][isZh() ? 'zh' : 'en']}</b>`;
+    const wrap = document.querySelector('.wrap-narrow');
+    if (wrap) wrap.insertBefore(bar, wrap.firstChild);
+    el.style.outline = '2px solid var(--red)';
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+  })();
+
+  window.WORDS = [
+    ["这","zhè","this"],["台","tái","measure word for machines"],["有","yǒu","to have; there is"],
+    ["问题","wèntí","problem"],["故障","gùzhàng","fault, breakdown"],["看","kàn","to look"],
+    ["过来","guòlai","to come over"],["一下","yíxià","briefly, a bit"],["电机","diànjī","motor (industry word)"]
+  ];
+  const grid = document.getElementById('wordGrid');
+  window.WORDS.forEach(w => {
+    const d = document.createElement('div');
+    d.className = 'word';
+    d.onclick = () => flip(d);
+    d.innerHTML = `<div class="hz">${w[0]}</div><div class="py" style="display:none;">${w[1]}</div><div class="def" style="display:none;">${w[2]}</div>`;
+    grid.appendChild(d);
+  });
+</script>
+</body>
+</html>

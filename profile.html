@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile · 津企通</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-lang="en">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">津</span>
+      <span>
+        <span class="en-only">JinQiTong</span>
+        <span class="zh-only">津企通</span>
+        <span class="sub en-only">Job Chinese · Zimbabwe</span>
+        <span class="sub zh-only">岗位中文 · 津巴布韦</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html"><span class="en-only">Home</span><span class="zh-only">首页</span></a>
+      <a href="learning-path.html"><span class="en-only">Job Chinese</span><span class="zh-only">岗位中文</span></a>
+      <a href="jobs.html"><span class="en-only">Jobs</span><span class="zh-only">求职岗位</span></a>
+      <a href="report.html" class="active"><span class="en-only">My Learning</span><span class="zh-only">我的学习</span></a>
+      <a href="my-certification.html"><span class="en-only">My Certification</span><span class="zh-only">我的认证</span></a>
+      <a href="enterprise.html"><span class="en-only">Enterprise</span><span class="zh-only">企业服务</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang-toggle">
+        <button id="btnZh" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap wrap-narrow" style="padding-top:28px;">
+
+  <h2 class="sec-title"><span class="en-only">My profile</span><span class="zh-only">我的档案</span></h2>
+  <p class="sec-sub"><span class="en-only">Your resume plus your language certification — this is what enterprises see in the talent pool.</span><span class="zh-only">简历 + 语言认证——这就是企业人才池里看到的样子。</span></p>
+
+  <!-- 简历 -->
+  <div class="card" style="padding:24px; margin-top:16px;">
+    <h3 style="font-size:16px; margin-bottom:12px;">📄 <span class="en-only">Resume</span><span class="zh-only">简历</span></h3>
+    <div class="grid-2" style="grid-template-columns:1fr 1fr;">
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Name</span><span class="zh-only">姓名</span></label><input class="inp" value="Tawanda · 塔万达"></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Target job</span><span class="zh-only">目标岗位</span></label><input class="inp" value="矿业 · 破碎机操作"></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Field / education</span><span class="zh-only">专业 / 学历</span></label><input class="inp" value="Mining Engineering · 矿业工程"></div>
+      <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Experience</span><span class="zh-only">工作经验</span></label><input class="inp" value="3 年矿业操作经验"></div>
+    </div>
+    <div style="margin-bottom:12px;"><label class="en" style="display:block; font-size:12px; color:var(--ink-3); margin-bottom:4px;"><span class="en-only">Skills</span><span class="zh-only">技能</span></label><input class="inp" value="破碎机操作、设备巡检、安全规范"></div>
+    <p class="en" style="font-size:12px; color:var(--ink-3);"><span class="en-only">Resume is a demo example — edit fields are not persisted yet.</span><span class="zh-only">简历为演示示例，字段暂未接入真实保存。</span></p>
+  </div>
+
+  <!-- 语言认证 -->
+  <div class="card" style="padding:24px; margin-top:16px;">
+    <h3 style="font-size:16px; margin-bottom:12px;">🎓 <span class="en-only">Stage check</span><span class="zh-only">阶段测评</span></h3>
+    <div id="certView"></div>
+    <div style="margin-top:12px; padding-top:12px; border-top:1px solid var(--line-2);">
+      <a href="exam-register.html" style="color:var(--red); font-weight:600; font-size:13.5px;"><span class="en-only">Register for the certification exam →</span><span class="zh-only">报名认证大考 →</span></a>
+      <div class="en" style="font-size:12px; color:var(--ink-3); margin-top:2px;"><span class="en-only">The A/B certification comes from the formal exam, not this stage check.</span><span class="zh-only">A/B 认证来自正式大考，而非本阶段测评。</span></div>
+    </div>
+  </div>
+
+  <!-- 口语音频 -->
+  <div class="card" style="padding:24px; margin-top:16px;">
+    <h3 style="font-size:16px; margin-bottom:10px;">🎙️ <span class="en-only">Self-intro audio</span><span class="zh-only">中文自我介绍音频</span></h3>
+    <button class="play-btn" onclick="say('intro')"><span class="ic">▶</span><span class="en-only">Play (machine-read)</span><span class="zh-only">播放（机器朗读）</span></button>
+    <button class="play-btn" style="margin-left:8px;" onclick="recordVoice(this)"><span class="ic">🎤</span><span class="en-only">Record</span><span class="zh-only">录制</span></button>
+    <p class="en" style="font-size:12px; color:var(--ink-3); margin-top:8px;"><span class="en-only">Machine-read sample — real recording to be added.</span><span class="zh-only">机器朗读示例；真人录音待接入。</span></p>
+  </div>
+
+  <!-- 进入人才池 -->
+  <div class="card" style="padding:24px; margin-top:16px;">
+    <h3 style="font-size:16px; margin-bottom:10px;">🧲 <span class="en-only">Enter the talent pool</span><span class="zh-only">进入人才池</span></h3>
+    <p style="font-size:14px; color:var(--ink-2); margin-bottom:12px;">
+      <span class="en-only">Turn on to let enterprises see your profile and contact you.</span>
+      <span class="zh-only">开启后，企业可看到你的档案并主动联系你。</span>
+    </p>
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:16px;">
+      <div><b><span class="en-only">Enter the talent pool</span><span class="zh-only">进入人才池</span></b></div>
+      <label class="switch"><input type="checkbox" id="poolSwitch" onchange="togglePool(this)"><span class="slider"></span></label>
+    </div>
+
+    <!-- 知情清单 -->
+    <div style="background:var(--bg); border-radius:var(--r-sm); padding:14px 16px;">
+      <div style="font-size:12.5px; font-weight:700; color:var(--ink-3); letter-spacing:.03em; margin-bottom:8px;"><span class="en-only">What enterprises will see</span><span class="zh-only">进入后，企业将看到</span></div>
+      <div style="font-size:13.5px; color:var(--ink-2); line-height:1.9;">
+        <div>✅ <span class="en-only">Your resume (field, experience, skills)</span><span class="zh-only">你的简历（专业、经验、技能）</span></div>
+        <div>✅ <span class="en-only">Your language certification (final assessment result)</span><span class="zh-only">语言认证（最终大考成绩）</span></div>
+        <div>✅ <span class="en-only">Your self-intro audio</span><span class="zh-only">中文自我介绍音频</span></div>
+      </div>
+      <div style="font-size:12.5px; font-weight:700; color:var(--ink-3); letter-spacing:.03em; margin:10px 0 8px;"><span class="en-only">Enterprises will NOT see</span><span class="zh-only">企业不会看到</span></div>
+      <div style="font-size:13.5px; color:var(--ink-2); line-height:1.9;">
+        <div>🔒 <span class="en-only">Your practice records, wrong answers, study time</span><span class="zh-only">练习记录、错题、学习时长</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:18px; display:flex; flex-wrap:wrap; gap:12px;">
+    <a href="index.html" class="btn btn-ghost"><span class="en-only">← Back to home</span><span class="zh-only">← 返回首页</span></a>
+    <a href="enterprise.html" class="btn btn-ghost"><span class="en-only">See how enterprises view you →</span><span class="zh-only">看企业视角下的你 →</span></a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>津企通 JinQiTong · <span class="en-only">Job Chinese & Enterprise Services</span><span class="zh-only">岗位中文学习与企业服务</span></span>
+    <span>
+      <a href="#" onclick="soon(event)"><span class="en-only">About</span><span class="zh-only">关于项目</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Contact</span><span class="zh-only">联系团队</span></a>
+      <a href="#" onclick="soon(event)"><span class="en-only">Privacy</span><span class="zh-only">隐私说明</span></a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  const ABILITY_LABELS = [
+    { key: 'listen', en: 'Understand', zh: '听得懂' },
+    { key: 'express', en: 'Express', zh: '说得清' },
+    { key: 'collab', en: 'Collaborate', zh: '能协作' }
+  ];
+
+  function render() {
+    const r = getAssessmentResult();
+    const zh = isZh();
+    const cert = document.getElementById('certView');
+    if (!r.complete) {
+      cert.innerHTML = `<p style="font-size:14px; color:var(--ink-2);">${zh ? '尚未完成最终测评。' : 'No final assessment yet.'} <a href="assessment.html" style="color:var(--red);font-weight:600;">${zh ? '去测评 →' : 'Take it →'}</a></p>`;
+      return;
+    }
+    const levelText = r.level === 'A' ? 'A' : (r.level === 'B' ? 'B' : '');
+    const badge = r.passed
+      ? `<span class="pill pill-red">${zh ? '阶段测评：' : 'Stage check: '}${levelText}${zh ? ' 等' : ''}</span>`
+      : `<span class="pill pill-gray">${zh ? '阶段测评未达标' : 'Stage check not passed'}</span>`;
+    let html = `<div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">${badge}<span style="font-size:13px; color:var(--ink-3);">${r.score}/${r.total}</span></div>`;
+    html += `<div style="font-size:13.5px; color:var(--ink-2); line-height:1.9;">`;
+    for (const lab of ABILITY_LABELS) {
+      const qs = r.ABILITIES[lab.key];
+      const cnt = qs.filter(q => r.answers[q] === true).length;
+      const ap = cnt >= 1;
+      html += `<div>${ap ? '✅' : '⚠️'} ${lab[zh?'zh':'en']} <span style="color:var(--ink-3);">${cnt}/${qs.length}</span></div>`;
+    }
+    html += `</div>`;
+    cert.innerHTML = html;
+  }
+  render();
+  window.onLangChange = render;
+
+  function togglePool(cb) {
+    if (setState({ inTalentPool: !!cb.checked })) {
+      toast(cb.checked ? (isZh() ? '已进入人才池（演示）' : 'Entered talent pool (demo)') : (isZh() ? '已退出人才池（演示）' : 'Left talent pool (demo)'));
+    } else {
+      cb.checked = !cb.checked;
+    }
+  }
+  (function restorePool() {
+    const s = getState();
+    const sw = document.getElementById('poolSwitch');
+    if (sw) sw.checked = !!s.inTalentPool;
+  })();
+</script>
+</body>
+</html>
